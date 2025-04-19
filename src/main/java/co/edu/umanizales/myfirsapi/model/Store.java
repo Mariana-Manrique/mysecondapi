@@ -7,10 +7,14 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class Location {
 
-    private String code;
+public class Store {
+    private String location;
     private String name;
+    private String adress;
+    private String city;
+    private String code;
+    private String ID;
 
 
 }

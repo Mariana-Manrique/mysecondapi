@@ -1,19 +1,49 @@
 package co.edu.umanizales.myfirsapi.controller;
 
 import co.edu.umanizales.myfirsapi.model.Location;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import co.edu.umanizales.myfirsapi.service.LocationService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 @RestController
-@RequestMapping(path ="/location")
+@RequestMapping(path ="/Location")
 public class LocationController {
-
+/*
     @GetMapping
     public String getlocation(){
-       // Location location = new Location("jdjud" "kedjjd" "jhjj" );
+        Location location = new Location("17001","Manizales");
 
-        return "Manizales";
+        return "manizales";
+    }
+*/
+@Autowired
+private LocationService locationService;
+
+    @GetMapping
+    public List<Location> getLocations() {
+
+        return locationService.getLocations();
+
     }
 
+    @GetMapping(path = "/{code}")
+    public Location getLocationByCode(@PathVariable String code){
+        return locationService.getLocationByCode(code);
+    }
+
+    @GetMapping(path = "/states")
+    public List<Location> getLocationsByStates(){
+        return locationService.getStates();
+    }
+
+    @GetMapping(path = "/name/{name}")
+    public Location getLocationByName(@PathVariable String name){return locationService.getLocationByName(name);}
+
+    @GetMapping(path = "/initialLetter/{initialLetter}")
+    public List<Location> getLocationByInitialLetter (@PathVariable String initialLetter){ return locationService.getLocationByInitialLetter(initialLetter);}
 }
+
