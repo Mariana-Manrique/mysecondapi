@@ -9,12 +9,11 @@ import lombok.Setter;
 @AllArgsConstructor
 
 public class Store {
-    private String location;
+    private Location location;
     private String name;
     private String adress;
-    private String city;
     private String code;
-    private String ID;
+    private String id;
 
 
 }

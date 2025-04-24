@@ -45,5 +45,9 @@ private LocationService locationService;
 
     @GetMapping(path = "/initialLetter/{initialLetter}")
     public List<Location> getLocationByInitialLetter (@PathVariable String initialLetter){ return locationService.getLocationByInitialLetter(initialLetter);}
+
+    @GetMapping(path = "/byinitialandendletter/{letterA}/{letterB}")
+    public List<Location> getLocationByInitialAndLetter (@PathVariable char letterA, @PathVariable char letterB){
+        return locationService.getLocationByInitialAndLetter(letterA, letterB);}
 }
 

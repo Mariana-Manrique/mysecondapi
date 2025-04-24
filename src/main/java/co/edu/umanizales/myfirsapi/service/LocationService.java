@@ -90,4 +90,15 @@ public class LocationService {
         }
         return initialLetterArray;
     }
+//Mi aparametro recibe 2 una letra inicial y en la que termine, letterA que es la primera letra y letterB para la ultima letra
+//El chatAt funciona para una posicion especifica y length nos sirve para la ultima letra sin saber la ultima posicion por ende se pone el -1
+    public List<Location> getLocationByInitialAndLetter (char letterA , char letterB) {
+        List<Location> initialandendletterArray = new ArrayList<>();
+        for (Location location : locations) {
+            if(location.getName().charAt(0)== letterA && location.getName().charAt(location.getName().length()-1)== letterB){
+                initialandendletterArray.add(location);
+            }
+        }
+        return initialandendletterArray;
+    }
 }

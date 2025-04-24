@@ -1,15 +1,26 @@
 package co.edu.umanizales.myfirsapi.controller;
 
+import co.edu.umanizales.myfirsapi.model.Location;
+import co.edu.umanizales.myfirsapi.model.Store;
+import co.edu.umanizales.myfirsapi.service.LocationService;
+import co.edu.umanizales.myfirsapi.service.StoreService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
-@RequestMapping(path ="/store")
+@RequestMapping(path = "/store" )
 public class StoreController {
+    @Autowired
+    private StoreService storeService;
 
     @GetMapping
-    public String hello(){
-        return "Hola lindos";
+    public List<Store> getStore() {
+        return storeService.getStores();
     }
+
+
 }
