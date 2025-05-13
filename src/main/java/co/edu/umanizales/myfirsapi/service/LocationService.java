@@ -70,9 +70,9 @@ public class LocationService {
         return states;
     }
 
-    public Location getLocationByName(String name) {
+    public Location getLocationByName(String description) {
         for (Location location : locations) {
-            if (location.getName().equals(name)) {
+            if (location.getDescription().equals(description)) {
                 return location;
             }
         }
@@ -84,7 +84,7 @@ public class LocationService {
     public List<Location> getLocationByInitialLetter (String initialLetter) {
         List<Location> initialLetterArray = new ArrayList<>();
         for (Location location : locations) {
-            if(location.getName().charAt(0)== initialLetter.charAt(0)){
+            if(location.getDescription().charAt(0)== initialLetter.charAt(0)){
                 initialLetterArray.add(location);
             }
         }
@@ -95,7 +95,7 @@ public class LocationService {
     public List<Location> getLocationByInitialAndLetter (char letterA , char letterB) {
         List<Location> initialandendletterArray = new ArrayList<>();
         for (Location location : locations) {
-            if(location.getName().charAt(0)== letterA && location.getName().charAt(location.getName().length()-1)== letterB){
+            if(location.getDescription().charAt(0)== letterA && location.getDescription().charAt(location.getDescription().length()-1)== letterB){
                 initialandendletterArray.add(location);
             }
         }

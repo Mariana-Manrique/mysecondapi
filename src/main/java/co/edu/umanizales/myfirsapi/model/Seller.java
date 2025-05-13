@@ -15,5 +15,7 @@ public class Seller{
     private String gender;
     private String identification;
     private Location City;
+    private TypeDoc typeDoc;
+    private String code;
 
 }

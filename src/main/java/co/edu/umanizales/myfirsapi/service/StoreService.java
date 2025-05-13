@@ -43,12 +43,26 @@ public class StoreService {
 
             while ((line = csvReader.readNext()) != null) {
                 // line[0] = código, line[3] = nombre del municipio
-                stores.add(new Store(locationService.getLocationByCode(line[0]), line[1],line[2],line[3],line[4]));
+                stores.add(new Store(locationService.getLocationByCode((line[0])), line[1],line[2],line[3],line[4]));
             }
 
         } catch (IOException | CsvValidationException e) {
             throw new RuntimeException("Error leyendo el archivo CSV", e);
         }
+    }
+
+    public String addStore(Store store) {
+        stores.add(store);
+        return "Tienda agregada";
+    }
+
+    public Store getStoreByCode(String code) {
+        for (Store store : stores) {
+            if (store.getCode().equals(code)) {
+                return store;
+            }
+        }
+        return null;
     }
 
 }

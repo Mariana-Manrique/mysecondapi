@@ -8,13 +8,10 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 
-public class Store {
-    private Location location;
-    private String name;
-    private String address;
+public class Product {
+    private double price;
+    private int stock;
+    private TypeProduct typeProduct;
     private String code;
-    private String description;
-
-
 
 }

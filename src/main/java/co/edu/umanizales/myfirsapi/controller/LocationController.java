@@ -40,8 +40,8 @@ private LocationService locationService;
         return locationService.getStates();
     }
 
-    @GetMapping(path = "/name/{name}")
-    public Location getLocationByName(@PathVariable String name){return locationService.getLocationByName(name);}
+    @GetMapping(path = "/name/{description}")
+    public Location getLocationByName(@PathVariable String description){return locationService.getLocationByName(description);}
 
     @GetMapping(path = "/initialLetter/{initialLetter}")
     public List<Location> getLocationByInitialLetter (@PathVariable String initialLetter){ return locationService.getLocationByInitialLetter(initialLetter);}

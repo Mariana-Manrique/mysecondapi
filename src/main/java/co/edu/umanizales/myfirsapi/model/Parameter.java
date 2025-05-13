@@ -6,10 +6,9 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Location extends Parameter {
+@AllArgsConstructor
 
-
-    public Location(String code, String description) {
-        super(code, description);
-    }
+public class Parameter {
+    private String code;
+    private String description;
 }

@@ -4,16 +4,21 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.List;
+import java.util.Locale;
+
 @Getter
 @Setter
 @AllArgsConstructor
 
 public class Sale {
-    private String seller;
-    private String name_store;
-    private String date;
-    private String time;
-    private String city;
-    private String name;
-    private String lastname;
+    private Store store;
+    private Seller seller;
+    private LocalDate dateSale;
+    private int quantity;
+    private List<Product> products;
+    private String code;
+
 }
