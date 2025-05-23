@@ -1,6 +1,6 @@
-Price,Stock,TypeProduct,Code
-2.500,4,182,567
-3.500,3,185,566
-9.000,5,188,564
-600,6,187,565
-4.800,2,181,562
+codigo, descripcion,Price,Stock,TypeProduct
+567,bebida lactea,2.500,4,182
+566,bebida,5.500,4,188
+564,dulce,3.500,4,185
+565,comida,6.500,4,181
+562,fruta,8.500,4,185

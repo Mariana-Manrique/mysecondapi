@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 
-public class Parameter {
+public abstract class Parameter {
     private String code;
     private String description;
 }
